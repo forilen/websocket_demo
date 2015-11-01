@@ -1,8 +1,8 @@
 $(function() {
-    var exampleSocket = new WebSocket("ws://192.168.31.231:8020/", "protocolOne");
+    var exampleSocket = new WebSocket("ws://192.168.31.231:8020/?uid=10012", "protocolOne");
 
     exampleSocket.onmessage = function(event) {
-        console.log(event.data);
+        $("#chatbox").append("<li>"+"["+Date()+"]"+event.data+"</li>");
     }
 });
 
